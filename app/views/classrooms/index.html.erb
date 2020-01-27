@@ -1,0 +1,5 @@
+<h1>All Classes</h1>
+
+<%= @classrooms.map do |classroom| %>
+    <%= render partial: 'classroom', locals: {classroom: classroom} %>
+<% end %>
