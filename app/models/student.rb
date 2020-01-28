@@ -13,4 +13,8 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  def self.search(params_query)
+    where("name LIKE (?)", "%#{params_query}%")
+  end
 end
